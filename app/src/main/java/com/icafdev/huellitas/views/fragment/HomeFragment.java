@@ -12,10 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.icafdev.huellitas.R;
 import com.icafdev.huellitas.adapters.AdapterHome;
+import com.icafdev.huellitas.models.firebase.ConstantFB;
 import com.icafdev.huellitas.models.firebase.Entry;
 
 public class HomeFragment extends Fragment {
@@ -24,22 +26,20 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rv_home;
     private AdapterHome adapterHome;
-    private FirebaseFirestore firebaseFirestore;
+    private CollectionReference collectionReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        firebaseFirestore = FirebaseFirestore.getInstance();
+        collectionReference = FirebaseFirestore.getInstance().collection(ConstantFB.ENTRIES);
 
         rv_home = view.findViewById(R.id.rv_home);
 
-//        rv_home.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         rv_home.setLayoutManager( new WrapContentLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
-        Query query = firebaseFirestore.collection("entries");
+        Query query = collectionReference.orderBy("time", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Entry> entryFirestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<Entry>().setQuery(query, Entry.class).build();
         adapterHome = new AdapterHome(entryFirestoreRecyclerOptions, this);
         adapterHome.notifyDataSetChanged();
