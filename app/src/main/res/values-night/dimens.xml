@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="button_radius">16dp</dimen>
+    <dimen name="i_m">38dp</dimen>
+    <dimen name="e_b">160dp</dimen>
+    <dimen name="xxxxxxl">72dp</dimen>
+    <dimen name="xxxxxl">64dp</dimen>
+    <dimen name="xxxxl">56dp</dimen>
+    <dimen name="xxxl">48dp</dimen>
+    <dimen name="xxl">40dp</dimen>
+    <dimen name="xl">32dp</dimen>
+    <dimen name="l">24dp</dimen>
+    <dimen name="m">16dp</dimen>
+    <dimen name="s">8dp</dimen>
+    <dimen name="type">4dp</dimen>
+    <dimen name="r">4dp</dimen>
+    <dimen name="xs">4dp</dimen>
+    <dimen name="t_i">35dp</dimen>
+    <dimen name="f_s">8sp</dimen>
+    <dimen name="f_m">16sp</dimen>
+    <dimen name="f_l">24sp</dimen>
+    <dimen name="f_xl">32sp</dimen>
+    <dimen name="f_xxl">24sp</dimen>
+</resources>

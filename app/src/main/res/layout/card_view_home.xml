@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_index"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/xs"
+    android:background="@drawable/rounded_corner_view"
+    android:backgroundTint="?attr/colorPrimary"
+    app:cardCornerRadius="@dimen/l">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_type"
+            android:layout_width="@dimen/l"
+            android:layout_height="@dimen/l"
+            android:layout_margin="@dimen/s"
+            android:background="@drawable/ic_dog"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_pet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s"
+            android:text="PET NAME"
+            android:textSize="20sp"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnPrimary"
+            android:fontFamily="@font/montserrat_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/iv_type"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.002"/>
+
+        <TextView
+            android:id="@+id/tv_raza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s"
+            android:text="Raza"
+            android:textAlignment="textEnd"
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnPrimary"
+            android:fontFamily="@font/montserrat_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01" />
+
+        <ImageView
+            android:id="@+id/iv_gen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_male"
+            android:layout_margin="@dimen/s"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_raza"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="@dimen/s"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_img"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_gen"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s"
+            android:padding="@dimen/xs"
+            android:paddingHorizontal="@dimen/xs"
+            android:background="@drawable/rounded_corner_view"
+            android:text="ESTADO"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:fontFamily="@font/montserrat_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_gen"
+            app:layout_constraintVertical_bias="0.025" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s"
+            android:paddingHorizontal="@dimen/xs"
+            android:background="@drawable/rounded_corner_city"
+            android:backgroundTint="@color/opacity_black"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/city"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/s"
+            android:maxLength="207"
+            android:maxLines="3"
+            android:paddingHorizontal="@dimen/s"
+            android:text="Descripción"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnPrimary"
+            android:fontFamily="@font/montserrat_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_photo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_suspensive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:paddingHorizontal="@dimen/s"
+            android:paddingVertical="@dimen/s"
+            android:text="..."
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linear_button"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:paddingVertical="@dimen/m"
+            android:paddingHorizontal="@dimen/s"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/tv_fijo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingEnd="@dimen/s"
+                android:layout_alignParentStart="true"
+                android:text="Buscado desde:"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_fijo"
+                android:text="23 de septiembre de 2021"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <TextView
+                android:id="@+id/tv_fijo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/s"
+                android:layout_toStartOf="@+id/tv_name"
+                android:text="Por:"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Usuario"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/xs"
+            android:layout_centerHorizontal="true"
+            android:textColor="?attr/colorOnPrimary"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:backgroundTint="?attr/colorPrimaryDark"
+            android:text="DETALLES"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_semibold"
+            app:strokeColor="?attr/colorOnPrimary"
+            app:strokeWidth="0.5dp"
+            app:shapeAppearance="@style/RoundedBottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_content"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

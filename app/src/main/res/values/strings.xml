@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Huellitas App</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_entry">Dashboard</string>
+    <string name="title_profile">Perfil</string>
+    <string name="signup">Registro</string>
+    <string name="config">Configuración</string>
+    <string name="search">Buscar</string>
+    <string name="notific">Notificaciones</string>
+    <string name="dark_mode">Modo oscuro</string>
+    <string name="signup_m">REGISTRO</string>
+    <string name="dog">Perro</string>
+    <string name="cat">Gato</string>
+    <string name="raza">Raza</string>
+    <string name="description">Descripción</string>
+    <string name="contact_name">Nombre del contacto</string>
+    <string name="phone_contact">Teléfono de contacto</string>
+    <string name="create_entry">Crear entrada</string>
+    <string name="pet_status">Estado de la mascota</string>
+    <string name="city">Ciudad</string>
+    <string name="event_date">Fecha del evento</string>
+    <string name="pet_type">Tipo de mascota</string>
+    <string name="save">Guardar</string>
+    <string name="phone">Teléfono</string>
+    <string name="male">Macho</string>
+    <string name="female">Hembra</string>
+    <string name="gen">Genero</string>
+    <string name="name">Nombre</string>
+    <string name="email">Correo Electronico</string>
+    <string name="contact">Contacto</string>
+    <string name="address">Dirección</string>
+    <string name="password">Contraseña</string>
+    <string name="conf_password">Confirmar contraseña</string>
+    <string name="conti">Continuar</string>
+    <string name="image_select">Seleccione una imagen</string>
+    <string name="upload_image">Subiendo imagen</string>
+    <string name="profile_img">Imagen de perfil</string>
+    <string name="huellitas">Huellitas</string>
+    <string name="team">Team</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="sign_in">Iniciar Sesión</string>
+    <string name="get_password">Recuperar contraseña</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="key_preferences">preferences</string>
+</resources>

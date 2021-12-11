@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HuellitasApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/bone</item>
+        <item name="colorBackgroundFloating">@color/colorPrimary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryDark</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textAppearanceListItem">@font/montserrat_regular</item>
+        <item name="android:textColorPrimary">?attr/colorPrimaryVariant</item>
+        <item name="android:windowBackground">?attr/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="BgChangeTheme" parent="Theme.HuellitasApp">
+        <item name="android:backgroundTint">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextEntry" parent="Theme.HuellitasApp">
+        <item name="colorOnPrimary">?attr/colorBackgroundFloating</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.HuellitasApp">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="MainTheme" parent="Theme.HuellitasApp">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/design_default_color_primary</item>
+    </style>
+
+    <style name="RoundedPhoto" parent="ShapeAppearanceOverlay">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedPhotoEntry" parent="ShapeAppearanceOverlay">
+        <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="RoundedTop" parent="ShapeAppearanceOverlay">
+        <item name="cornerSizeTopLeft">15%</item>
+        <item name="cornerSizeTopRight">15%</item>
+    </style>
+
+    <style name="RoundedBottom" parent="ShapeAppearanceOverlay">
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+
+</resources>

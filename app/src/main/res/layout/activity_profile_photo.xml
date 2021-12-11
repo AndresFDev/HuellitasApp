@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_profile_image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.ProfilePhotoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_e_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/m"
+            android:background="@drawable/rounded_corner_view"
+            android:backgroundTint="?attr/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/s">
+
+            <RelativeLayout
+                android:id="@+id/bar_profile"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageButton
+                    android:id="@+id/ib_back"
+                    android:layout_width="@dimen/l"
+                    android:layout_height="@dimen/l"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/s"
+                    android:layout_marginEnd="@dimen/s"
+                    android:background="@null"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_profile"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_profile" />
+
+                <TextView
+                    android:id="@+id/tv_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/ib_settings"
+                    android:layout_toEndOf="@id/ib_back"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center_horizontal"
+                    android:text="@string/profile_img"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/f_l" />
+
+                <ImageButton
+                    android:id="@+id/ib_settings"
+                    android:layout_width="@dimen/l"
+                    android:layout_height="@dimen/l"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/s"
+                    android:layout_marginEnd="@dimen/s"
+                    android:background="@null"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:id="@+id/sv_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bar_profile"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_photo_entry"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/iv_photo"
+                                android:layout_width="250dp"
+                                android:layout_height="250dp"
+                                android:layout_marginVertical="@dimen/s"
+                                android:background="@drawable/rounded_corner_view"
+                                android:backgroundTint="?attr/colorPrimaryDark"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_default_img"
+                                app:shapeAppearanceOverlay="@style/RoundedPhotoEntry" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/xs"
+                                android:layout_marginTop="@dimen/s"
+                                android:indeterminate="false"
+                                android:indeterminateTint="?attr/colorOnPrimary"
+                                android:max="100"
+                                android:progress="0"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/s"
+                                android:layout_marginBottom="@dimen/s"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center_horizontal"
+                                android:text="@string/upload_image"
+                                android:textColor="?attr/colorOnPrimary"
+                                android:textSize="@dimen/f_m"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="@dimen/s"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center"
+                                android:text="@string/image_select"
+                                android:textColor="?attr/colorOnPrimary"
+                                android:textSize="@dimen/f_l" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/b_save"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/s"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:backgroundTint="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/conti"
+                            android:textColor="?attr/colorOnPrimary"
+                            app:strokeColor="?attr/colorOnPrimary"
+                            app:strokeWidth="0.5dp"
+                            app:shapeAppearance="@style/RoundedPhoto"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center|bottom"
+        android:layout_margin="@dimen/s">
+
+        <TextView
+            android:id="@+id/tv_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/xs"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/huellitas"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/f_m" />
+
+        <TextView
+            android:id="@+id/tv_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/team"
+            android:textSize="@dimen/f_s"
+            android:textColor="?attr/colorOnPrimary" />
+
+    </LinearLayout>
+
+</RelativeLayout>

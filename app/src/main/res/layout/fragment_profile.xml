@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.fragment.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/bar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:layout_width="@dimen/l"
+                android:layout_height="@dimen/l"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                app:layout_constraintBottom_toTopOf="@+id/tv_profile"
+                app:layout_constraintEnd_toStartOf="@+id/tv_profile"
+                />
+
+            <TextView
+                android:id="@+id/tv_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:layout_toEndOf="@id/ib_back"
+                android:layout_toStartOf="@id/ib_settings"
+                android:text="Perfil"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/l"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <ImageButton
+                android:id="@+id/ib_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_configs"
+                android:backgroundTint="?attr/colorOnPrimary"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@drawable/rounded_corner_view"
+            android:backgroundTint="?attr/colorOnSecondary"
+            android:layout_margin="@dimen/s"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bar_profile"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="@drawable/rounded_corner_detail_top"
+                android:backgroundTint="?attr/colorPrimary">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_photo"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="@dimen/s"
+                    android:layout_marginVertical="@dimen/s"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundedPhoto"/>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/name"
+                    android:textSize="@dimen/f_l"
+                    android:textAllCaps="true"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cl_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/s"
+                android:orientation="vertical"
+                android:gravity="center_horizontal|center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rl_content"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/s"
+                    android:text="@string/phone"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/s"
+                    android:text="@string/email"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/b_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:backgroundTint="@color/bg_button"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Editar perfil"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:enabled="false"
+                app:strokeColor="?attr/colorBackgroundFloating"
+                app:strokeWidth="0.5dp"
+                app:shapeAppearance="@style/RoundedBottom" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_my_entries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s"
+            android:gravity="center_horizontal"
+            android:text="Mis entradas"
+            android:textSize="24sp"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnPrimary"
+            android:fontFamily="@font/montserrat_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_head"
+            app:layout_constraintVertical_bias="0.0"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_entries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/s"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_entries"
+            app:layout_constraintVertical_bias="0.0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

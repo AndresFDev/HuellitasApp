@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.icafdev.huellitas">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="com.google.android.elmyra.permission.CONFIGURE_ASSIST_GESTURE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission
+        android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"
+        tools:ignore="HighSamplingRate" />
+
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="true" />
+    <uses-feature
+        android:name="com.google.android.feature.GOOGLE_EXPERIENCE"
+        android:required="true" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HuellitasApp">
+        <activity
+            android:name=".views.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.EditProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".views.DetailEntryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BgChangeTheme" />
+        <activity
+            android:name=".views.EditEntryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BgChangeTheme" />
+        <activity
+            android:name=".views.ProfilePhotoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BgChangeTheme" />
+        <activity
+            android:name=".views.RecoverPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.SignUpActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BgChangeTheme" />
+        <activity
+            android:name=".views.SignInActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

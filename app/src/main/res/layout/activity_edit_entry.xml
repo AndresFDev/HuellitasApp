@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.EditEntryActivity">
+
+    <RelativeLayout
+        android:id="@+id/bar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="@dimen/m"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/tv_profile"
+            app:layout_constraintEnd_toStartOf="@+id/tv_profile"/>
+
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_toEndOf="@id/ib_back"
+            android:layout_toStartOf="@id/ib_settings"
+            android:text="Editar entrada"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/l"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <ImageButton
+            android:id="@+id/ib_settings"
+            android:layout_width="@dimen/l"
+            android:layout_height="@dimen/l"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/m"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bar_profile"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/s"
+            android:background="@drawable/rounded_corner_view"
+            android:backgroundTint="?attr/colorPrimary">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/pet_status"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioGroup
+                android:id="@+id/rg_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="Estado de la mascota:"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_status"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buscado"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_find"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Encontrado"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_adopt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="En adopción"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tiet_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/xs"
+                android:paddingHorizontal="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:focusable="true"
+                android:clickable="true"
+                android:hint="@string/event_date"
+                android:textColor="?attr/colorOnPrimary"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rg_status"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_cities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/city"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_date"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Spinner
+                android:id="@+id/s_cities"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/xl"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:backgroundTintMode="multiply"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/corner_round_spinner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_cities"
+                app:layout_constraintVertical_bias="0.0"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_addrees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:padding="@dimen/xs"
+                android:ems="20"
+                android:hint="Dirección"
+                android:inputType="textPersonName"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ1234567890#-.()"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/s_cities"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_pet_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:padding="@dimen/xs"
+                android:ems="10"
+                android:hint="Nombre de la mascota"
+                android:inputType="textPersonName"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_addrees"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/pet_type"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_pet_name"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioGroup
+                android:id="@+id/rg_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_type"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_dog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dog"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_cat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cat"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/xs"
+                android:orientation="horizontal"
+                android:gravity="start|center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rg_type"
+                app:layout_constraintVertical_bias="0.0" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_photo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginVertical="@dimen/s"
+                    android:src="@drawable/ic_default_img"
+                    android:background="@drawable/rounded_corner_view"
+                    android:backgroundTint="?attr/colorPrimaryDark"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundedPhotoEntry"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/s"
+                        android:gravity="center_horizontal"
+                        android:text="Cambiar imagen"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/xs"
+                        android:layout_marginTop="@dimen/s"
+                        android:indeterminate="false"
+                        android:indeterminateTint="?attr/colorOnPrimary"
+                        android:visibility="gone"
+                        android:max="100"
+                        android:progress="0" />
+
+                    <TextView
+                        android:id="@+id/tv_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/s"
+                        android:gravity="center_horizontal"
+                        android:text="Subiendo imagen"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_gen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/gen"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_photo"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioGroup
+                android:id="@+id/rg_gen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_gen"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:buttonTint="?attr/colorOnPrimary" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_raza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:padding="@dimen/xs"
+                android:ems="10"
+                android:hint="@string/raza"
+                android:inputType="textPersonName"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rg_gen"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:padding="@dimen/xs"
+                android:hint="@string/description"
+                android:inputType="textMultiLine|textLongMessage"
+                android:minLines="4"
+                android:maxLines="4"
+                android:maxLength="1000"
+                android:gravity="top|start"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ123456789#.()-"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_raza"
+                app:layout_constraintVertical_bias="0.0"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:padding="@dimen/xs"
+                android:ems="10"
+                android:hint="@string/contact_name"
+                android:inputType="textPersonName"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_description"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:padding="@dimen/xs"
+                android:ems="10"
+                android:hint="@string/phone_contact"
+                android:inputType="number"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_name"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/b_save_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginBottom="@dimen/e_b"
+                android:background="@drawable/rounded_corner_detail_top"
+                app:backgroundTint="?attr/colorPrimaryVariant"
+                android:text="Guardar"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:enabled="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tiet_phone"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center|bottom"
+        android:layout_margin="@dimen/s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tv_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/xs"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Huellitas"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Team"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnPrimary" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

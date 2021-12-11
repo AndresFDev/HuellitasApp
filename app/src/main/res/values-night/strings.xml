@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name">Nombre</string>
+    <string name="email">Correo Electronico</string>
+    <string name="contact">Contacto</string>
+    <string name="address">Dirección</string>
+    <string name="conf_password">Confirmar contraseña</string>
+    <string name="conti">Continuar</string>
+    <string name="image_select">Seleccione una imagen</string>
+    <string name="upload_image">Subiendo imagen</string>
+    <string name="profile_img">Imagen de perfil</string>
+    <string name="huellitas">Huellitas</string>
+    <string name="team">Team</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="sign_in">Iniciar Sesión</string>
+</resources>

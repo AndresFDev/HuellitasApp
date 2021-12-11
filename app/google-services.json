@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1010333665075",
+    "project_id": "huellitas-eeb0e",
+    "storage_bucket": "huellitas-eeb0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010333665075:android:7f9cdd40c7e5b9298d2046",
+        "android_client_info": {
+          "package_name": "com.example.huellitas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010333665075-kb293j4bdcb36fkvv47p7jrjisdm6u4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTgsN0XLhAedTqBLHpHuy1V3AAbR7uxKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010333665075-kb293j4bdcb36fkvv47p7jrjisdm6u4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010333665075:android:c4fbfd8bbcb0c34d8d2046",
+        "android_client_info": {
+          "package_name": "com.icafdev.huellitas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010333665075-kb293j4bdcb36fkvv47p7jrjisdm6u4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTgsN0XLhAedTqBLHpHuy1V3AAbR7uxKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010333665075-kb293j4bdcb36fkvv47p7jrjisdm6u4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

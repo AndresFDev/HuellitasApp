@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.preference.ListPreference
+        android:key="@string/key_preferences"
+        android:title="Seleccionar tema"
+        android:icon="@drawable/ic_theme"
+        android:dialogTitle="Seleccionar tema"
+        android:entries="@array/settings_theme_entries"
+        android:entryValues="@array/settings_theme_values"
+        android:summary="%s"/>
+
+</androidx.preference.PreferenceScreen>

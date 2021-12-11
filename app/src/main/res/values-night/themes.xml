@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HuellitasApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimaryDarkTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDarkTheme</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariantDarkTheme</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryDarkTheme</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondaryDarkTheme</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariantDarkTheme</item>
+        <item name="colorOnSecondary">@color/colorPrimaryDarkTheme</item>
+        <item name="colorBackgroundFloating">@color/colorOnPrimaryDarkTheme</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryDark</item>
+        <item name="android:textColorPrimary" tools:targetApi="l">?attr/colorOnPrimary</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="BgChangeTheme" parent="Theme.HuellitasApp">
+        <item name="android:backgroundTint">@color/colorPrimaryDarkDarkTheme</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.HuellitasApp">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="MainTheme" parent="Theme.HuellitasApp">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/design_default_color_primary</item>
+        <item name="android:backgroundTint">@color/colorPrimaryDarkDarkTheme</item>
+    </style>
+
+    <style name="RoundedPhoto" parent="ShapeAppearanceOverlay">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedPhotoEntry" parent="ShapeAppearanceOverlay">
+        <item name="cornerSize">15%</item>
+    </style>
+</resources>

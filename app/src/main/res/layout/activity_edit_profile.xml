@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryDark"
+    tools:context=".views.EditProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/bar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="@dimen/m"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/tv_profile"
+            app:layout_constraintEnd_toStartOf="@+id/tv_profile"/>
+
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_toEndOf="@id/ib_back"
+            android:layout_toStartOf="@id/ib_settings"
+            android:text="Editar Perfil"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/l"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <ImageButton
+            android:id="@+id/ib_settings"
+            android:layout_width="@dimen/l"
+            android:layout_height="@dimen/l"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/m"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_e_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/bar_profile"
+        android:background="@drawable/rounded_corner_view"
+        android:backgroundTint="?attr/colorPrimary"
+        android:padding="@dimen/s"
+        android:layout_margin="@dimen/m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bar_profile"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ScrollView
+            android:id="@+id/sv_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_photo"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_marginVertical="@dimen/s"
+                            android:src="@null"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/RoundedPhoto"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/s"
+                            android:gravity="center"
+                            android:text="Seleccione una imagen"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textColor="?attr/colorOnPrimary" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiet_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/xl"
+                        android:layout_marginTop="@dimen/s"
+                        android:paddingHorizontal="@dimen/s"
+                        android:background="@drawable/text_form"
+                        android:inputType="textPersonName"
+                        android:hint="Ingrese su nombre"
+                        android:textColorHint="?attr/colorOnPrimary"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
+                        android:imeOptions="actionNext"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiet_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/xl"
+                        android:layout_marginTop="@dimen/s"
+                        android:paddingHorizontal="@dimen/s"
+                        android:background="@drawable/text_form"
+                        android:hint="Ingrese un teléfono"
+                        android:textColorHint="?attr/colorOnPrimary"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:imeOptions="actionNext"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/s"
+                        android:indeterminate="false"
+                        android:indeterminateTint="?attr/colorOnPrimary"
+                        android:visibility="gone"
+                        android:max="100"
+                        android:progress="10" />
+
+                    <Button
+                        android:id="@+id/b_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/s"
+                        android:background="@drawable/text_form"
+                        android:text="Actualizar Perfil"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:fontFamily="@font/montserrat_semibold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center|bottom"
+        android:layout_margin="@dimen/s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tv_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/xs"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Huellitas"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Team"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnPrimary" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

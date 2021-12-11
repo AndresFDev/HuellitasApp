@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cities">
+        <item>Seleccione una ciudad</item>
+        <item>Armenia</item>
+        <item>Barranquilla</item>
+        <item>Bello</item>
+        <item>Bogotá</item>
+        <item>Bucaramanga</item>
+        <item>Cali</item>
+        <item>Cartagena</item>
+        <item>Cúcuta</item>
+        <item>Ibagué</item>
+        <item>Manizales</item>
+        <item>Medellín</item>
+        <item>Montería</item>
+        <item>Neiva</item>
+        <item>Pasto</item>
+        <item>Pereira</item>
+        <item>Santa Marta</item>
+        <item>Soacha</item>
+        <item>Soledad</item>
+        <item>Valledupar</item>
+        <item>Villavicencio</item>
+    </string-array>
+
+    <string-array name="settings_theme_entries">
+        <item>Predeterminado del sistema</item>
+        <item>Claro</item>
+        <item>Oscuro</item>
+    </string-array>
+
+
+    <string-array name="settings_theme_values">
+        <item>DEFAULT</item>
+        <item>LIGHT</item>
+        <item>DARK</item>
+    </string-array>
+
+
+    public enum Mode {
+    DEFAULT, DARK, LIGHT
+    }
+
+</resources>
