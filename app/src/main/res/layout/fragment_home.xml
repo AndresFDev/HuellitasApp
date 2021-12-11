@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,4 +14,91 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:backgroundTint="?attr/colorPrimaryDark"
+        android:layout_marginEnd="@dimen/m"
+        android:layout_marginTop="@dimen/m"
+        android:src="@drawable/ic_search"
+        app:fabSize="mini"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_adoption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/m"
+        android:backgroundTint="@color/blue"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/fab_search_p"
+        app:layout_constraintTop_toTopOf="@+id/fab_search_p"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_search_p"
+        app:srcCompat="@drawable/ic_b_adopt" />
+
+    <TextView
+        android:id="@+id/tv_adoption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/xs"
+        android:text="Adopción"
+        android:textColor="?attr/colorOnPrimary"
+        app:shapeAppearance="@style/RoundedPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/fab_adoption"
+        app:layout_constraintStart_toStartOf="@+id/fab_adoption"
+        app:layout_constraintEnd_toEndOf="@+id/fab_adoption"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/m"
+        android:backgroundTint="@color/green"
+        app:fabSize="mini"
+        app:layout_constraintTop_toTopOf="@+id/fab_adoption"
+        app:layout_constraintEnd_toStartOf="@+id/fab_adoption"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_adoption"
+        app:srcCompat="@drawable/ic_b_find" />
+
+    <TextView
+        android:id="@+id/tv_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/xs"
+        android:text="Encontrado"
+        android:textColor="?attr/colorOnPrimary"
+        app:shapeAppearance="@style/RoundedPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/fab_find"
+        app:layout_constraintStart_toStartOf="@+id/fab_find"
+        app:layout_constraintTop_toBottomOf="@+id/fab_find" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/m"
+        android:backgroundTint="@color/red"
+        android:onClick="setFind"
+        app:fabSize="mini"
+        app:layout_constraintTop_toTopOf="@+id/fab_find"
+        app:layout_constraintEnd_toStartOf="@+id/fab_find"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_find"
+        app:srcCompat="@drawable/ic_b_search" />
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/xs"
+        android:backgroundTint="@drawable/degrade"
+        android:text="Buscado"
+        android:textColor="?attr/colorOnPrimary"
+        app:shapeAppearance="@style/RoundedPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/fab_search"
+        app:layout_constraintStart_toStartOf="@+id/fab_search"
+        app:layout_constraintTop_toBottomOf="@+id/fab_search"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

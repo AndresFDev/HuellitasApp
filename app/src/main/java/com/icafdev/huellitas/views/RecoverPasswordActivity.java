@@ -32,7 +32,7 @@ public class RecoverPasswordActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        view =findViewById(R.id.cl_rec_password);
+        view = findViewById(R.id.cl_rec_password);
 
         tiet_email = findViewById(R.id.tiet_email);
         b_send = findViewById(R.id.b_send);
