@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment {
 
         rv_home.setLayoutManager(new WrapContentLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
-        Query query = collectionReference.orderBy("time", Query.Direction.DESCENDING);
+        Query query = collectionReference.orderBy("time", Query.Direction.ASCENDING);
         FirestoreRecyclerOptions<Entry> entryFirestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<Entry>().setQuery(query, Entry.class).build();
         adapterHome = new AdapterHome(entryFirestoreRecyclerOptions, this);
         adapterHome.notifyDataSetChanged();
