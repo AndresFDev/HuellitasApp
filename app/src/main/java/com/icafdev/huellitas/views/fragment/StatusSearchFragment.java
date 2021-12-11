@@ -1,4 +1,4 @@
-package com.icafdev.huellitas;
+package com.icafdev.huellitas.views.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,34 +15,35 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.icafdev.huellitas.R;
 import com.icafdev.huellitas.adapters.AdapterHome;
 import com.icafdev.huellitas.models.firebase.ConstantFB;
 import com.icafdev.huellitas.models.firebase.Entry;
 
-public class StatusFindFragment extends Fragment {
+public class StatusSearchFragment extends Fragment {
 
     View view;
 
-    private RecyclerView rv_find;
+    private RecyclerView rv_search;
     private AdapterHome adapterHome;
     private CollectionReference collectionReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_status_find, container, false);
+        view = inflater.inflate(R.layout.fragment_status_search, container, false);
 
         collectionReference = FirebaseFirestore.getInstance().collection(ConstantFB.ENTRIES);
 
-        rv_find = view.findViewById(R.id.rv_find);
+        rv_search = view.findViewById(R.id.rv_search);
 
-        rv_find.setLayoutManager(new WrapContentLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        rv_search.setLayoutManager(new WrapContentLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
-        Query query = collectionReference.whereEqualTo("status", "Encontrado");
+        Query query = collectionReference.whereEqualTo("status", "Buscado");
         FirestoreRecyclerOptions<Entry> entryFirestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<Entry>().setQuery(query, Entry.class).build();
         adapterHome = new AdapterHome(entryFirestoreRecyclerOptions, this);
         adapterHome.notifyDataSetChanged();
-        rv_find.setAdapter(adapterHome);
+        rv_search.setAdapter(adapterHome);
 
         return view;
 

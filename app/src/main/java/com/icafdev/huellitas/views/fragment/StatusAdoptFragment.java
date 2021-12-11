@@ -1,4 +1,4 @@
-package com.icafdev.huellitas;
+package com.icafdev.huellitas.views.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.icafdev.huellitas.R;
 import com.icafdev.huellitas.adapters.AdapterHome;
 import com.icafdev.huellitas.models.firebase.ConstantFB;
 import com.icafdev.huellitas.models.firebase.Entry;
