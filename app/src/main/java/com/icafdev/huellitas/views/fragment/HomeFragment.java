@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
 
         rv_home = view.findViewById(R.id.rv_home);
 
-        rv_home.setLayoutManager( new WrapContentLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        rv_home.setLayoutManager(new WrapContentLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
         Query query = collectionReference.orderBy("time", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Entry> entryFirestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<Entry>().setQuery(query, Entry.class).build();
@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    public class WrapContentLinearLayoutManager extends LinearLayoutManager {
+    public static class WrapContentLinearLayoutManager extends LinearLayoutManager {
         public WrapContentLinearLayoutManager(Context context, int orientation, boolean reverseLayout) {
             super(context, orientation, reverseLayout);
         }

@@ -13,4 +13,6 @@
     <string name="team">Team</string>
     <string name="sign_up">Registrarse</string>
     <string name="sign_in">Iniciar Sesión</string>
+    <string name="next">Siguiente</string>
+    <string name="preview">Anterior</string>
 </resources>

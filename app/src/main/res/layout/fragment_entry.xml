@@ -71,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/s"
+            android:padding="@dimen/m"
             android:background="@drawable/rounded_corner_view"
             android:backgroundTint="?attr/colorPrimary">
 
@@ -78,11 +79,12 @@
                 android:id="@+id/tv_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/s"
+                android:layout_marginStart="@dimen/s"
                 android:fontFamily="@font/montserrat_regular"
                 android:text="@string/pet_status"
                 android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -96,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:title="Estado de la mascota:"
                 android:orientation="horizontal"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -131,83 +134,6 @@
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/et_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/xs"
-                android:paddingHorizontal="@dimen/s"
-                android:layout_marginHorizontal="@dimen/xs"
-                android:gravity="center_vertical"
-                android:textSize="18sp"
-                android:focusable="true"
-                android:clickable="true"
-                android:hint="@string/event_date"
-                android:textColor="?attr/colorOnPrimary"
-                android:textColorHint="?attr/colorOnPrimary"
-                android:fontFamily="@font/montserrat_regular"
-                android:background="@drawable/text_form"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rg_status"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/tv_cities"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/s"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="@string/city"
-                android:textColor="?attr/colorOnPrimary"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_date"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Spinner
-                android:id="@+id/s_cities"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/xl"
-                android:layout_marginTop="@dimen/s"
-                android:layout_marginHorizontal="@dimen/xs"
-                android:backgroundTintMode="multiply"
-                android:spinnerMode="dropdown"
-                android:background="@drawable/corner_round_spinner"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_cities"
-                app:layout_constraintVertical_bias="0.0"/>
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_adrees"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/m"
-                android:layout_marginHorizontal="@dimen/xs"
-                android:paddingVertical="@dimen/xs"
-                android:paddingHorizontal="@dimen/s"
-                android:ems="20"
-                android:hint="Dirección"
-                android:maxLines="1"
-                android:inputType="textPersonName"
-                android:textColorHint="?attr/colorOnPrimary"
-                android:textColor="?attr/colorOnPrimary"
-                android:fontFamily="@font/montserrat_regular"
-                android:background="@drawable/text_form"
-                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ1234567890#-.()"
-                android:imeOptions="actionNext"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/s_cities"
-                app:layout_constraintVertical_bias="0.0" />
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_pet_name"
                 android:layout_width="match_parent"
@@ -216,20 +142,21 @@
                 android:layout_marginHorizontal="@dimen/xs"
                 android:paddingVertical="@dimen/xs"
                 android:paddingHorizontal="@dimen/s"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:ems="10"
                 android:hint="Nombre de la mascota"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:textColorHint="?attr/colorOnPrimary"
                 android:textColor="?attr/colorOnPrimary"
                 android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/text_form"
                 android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_adrees"
+                app:layout_constraintTop_toBottomOf="@id/rg_status"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
@@ -241,6 +168,7 @@
                 android:text="@string/pet_type"
                 android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -253,6 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -279,75 +208,6 @@
 
             </RadioGroup>
 
-            <LinearLayout
-                android:id="@+id/ll_photo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/xs"
-                android:orientation="horizontal"
-                android:gravity="start|center_vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rg_type"
-                app:layout_constraintVertical_bias="0.0" >
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_photo"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginVertical="@dimen/s"
-                    android:src="@drawable/ic_default_img"
-                    android:background="@drawable/rounded_corner_view"
-                    android:backgroundTint="?attr/colorPrimaryDark"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/RoundedPhotoEntry"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/s"
-                        android:gravity="center_horizontal"
-                        android:text="Seleccione una imagen"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/montserrat_regular"
-                        android:textColor="?attr/colorOnPrimary" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBar"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/xs"
-                        android:layout_marginTop="@dimen/s"
-                        android:indeterminate="false"
-                        android:indeterminateTint="?attr/colorOnPrimary"
-                        android:visibility="gone"
-                        android:max="100"
-                        android:progress="0" />
-
-                    <TextView
-                        android:id="@+id/tv_progress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/s"
-                        android:gravity="center_horizontal"
-                        android:text="Subiendo imagen"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/montserrat_regular"
-                        android:textColor="?attr/colorOnPrimary"
-                        android:visibility="gone"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/tv_gen"
                 android:layout_width="wrap_content"
@@ -357,11 +217,12 @@
                 android:text="@string/gen"
                 android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_photo"
+                app:layout_constraintTop_toBottomOf="@id/rg_type"
                 app:layout_constraintVertical_bias="0.0" />
 
             <RadioGroup
@@ -369,6 +230,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -403,16 +265,17 @@
                 android:layout_marginHorizontal="@dimen/xs"
                 android:paddingVertical="@dimen/xs"
                 android:paddingHorizontal="@dimen/s"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:ems="10"
                 android:hint="@string/raza"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:textColorHint="?attr/colorOnPrimary"
                 android:textColor="?attr/colorOnPrimary"
                 android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/text_form"
                 android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
                 android:imeOptions="actionNext"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -428,7 +291,7 @@
                 android:paddingVertical="@dimen/xs"
                 android:paddingHorizontal="@dimen/s"
                 android:hint="@string/description"
-                android:inputType="textMultiLine|textLongMessage"
+                android:inputType="text"
                 android:minLines="4"
                 android:maxLines="4"
                 android:maxLength="500"
@@ -439,11 +302,240 @@
                 android:background="@drawable/text_form"
                 android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ123456789#.()-"
                 android:imeOptions="actionNext"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_raza"
                 app:layout_constraintVertical_bias="0.0"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/b_next_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginEnd="@dimen/s"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/next"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorPrimaryDark"
+                android:enabled="true"
+                android:visibility="visible"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:strokeWidth="0.5dp"
+                app:shapeAppearance="@style/RoundedPhoto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_description"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0" />
+
+            <TextView
+                android:id="@+id/et_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/xs"
+                android:paddingHorizontal="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:focusable="true"
+                android:clickable="true"
+                android:hint="@string/event_date"
+                android:textColor="?attr/colorOnPrimary"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_cities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/city"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_date"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Spinner
+                android:id="@+id/s_cities"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/xl"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:backgroundTintMode="multiply"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/corner_round_spinner"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_cities"
+                app:layout_constraintVertical_bias="0.0"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_adrees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/m"
+                android:layout_marginHorizontal="@dimen/xs"
+                android:paddingVertical="@dimen/xs"
+                android:paddingHorizontal="@dimen/s"
+                android:ems="20"
+                android:hint="Dirección"
+                android:singleLine="true"
+                android:inputType="text"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/text_form"
+                android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ1234567890#-.()"
+                android:imeOptions="actionNext"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/s_cities"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/b_next_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginEnd="@dimen/s"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/next"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorPrimaryDark"
+                android:enabled="true"
+                android:visibility="gone"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:strokeWidth="0.5dp"
+                app:shapeAppearance="@style/RoundedPhoto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_adrees"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/b_preview_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
+                android:layout_marginEnd="@dimen/s"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/preview"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorPrimaryDark"
+                android:enabled="true"
+                android:visibility="gone"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:strokeWidth="0.5dp"
+                app:shapeAppearance="@style/RoundedPhoto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_adrees"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+            <LinearLayout
+                android:id="@+id/ll_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/xs"
+                android:background="@drawable/rounded_border_corner_view"
+                android:orientation="horizontal"
+                android:gravity="start|center_vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_photo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="@dimen/xs"
+                    android:layout_marginVertical="@dimen/s"
+                    android:src="@drawable/ic_default_img"
+                    android:background="@drawable/rounded_corner_view"
+                    android:backgroundTint="?attr/colorPrimaryDark"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundedPhotoEntry"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/s"
+                        android:gravity="center_horizontal"
+                        android:text="Seleccione una imagen de su mascota"
+                        android:textSize="@dimen/f_m"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/xs"
+                        android:layout_marginTop="@dimen/s"
+                        android:indeterminate="false"
+                        android:indeterminateTint="?attr/colorOnPrimary"
+                        android:visibility="gone"
+                        android:max="100"
+                        android:progress="0" />
+
+                    <TextView
+                        android:id="@+id/tv_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/s"
+                        android:gravity="center_horizontal"
+                        android:text="Subiendo imagen"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_name"
@@ -453,19 +545,21 @@
                 android:layout_marginHorizontal="@dimen/xs"
                 android:paddingVertical="@dimen/xs"
                 android:paddingHorizontal="@dimen/s"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:ems="10"
                 android:hint="@string/contact_name"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:textColorHint="?attr/colorOnPrimary"
                 android:textColor="?attr/colorOnPrimary"
                 android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/text_form"
                 android:digits="abcdefghijklmnñopqrstuvwxyzáéíóúABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ"
+                android:imeOptions="actionNext"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_description"
+                app:layout_constraintTop_toBottomOf="@id/ll_photo"
                 app:layout_constraintVertical_bias="0.0" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -476,7 +570,7 @@
                 android:layout_marginHorizontal="@dimen/xs"
                 android:paddingVertical="@dimen/xs"
                 android:paddingHorizontal="@dimen/s"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:ems="10"
                 android:hint="@string/phone_contact"
                 android:inputType="number"
@@ -485,6 +579,7 @@
                 android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/text_form"
                 android:imeOptions="actionDone"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -492,11 +587,35 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/b_create_entry"
-                android:layout_width="match_parent"
+                android:id="@+id/b_preview_2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/s"
-                android:layout_marginBottom="@dimen/e_b"
+                android:layout_marginEnd="@dimen/s"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/preview"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorPrimaryDark"
+                android:enabled="true"
+                android:visibility="gone"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:strokeWidth="0.5dp"
+                app:shapeAppearance="@style/RoundedPhoto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_phone"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/b_create_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:text="Crear entrada"
                 android:textAllCaps="true"
@@ -508,49 +627,16 @@
                 app:strokeWidth="0.5dp"
                 android:enabled="false"
                 app:shapeAppearance="@style/RoundedPhoto"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_phone"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:gravity="center|bottom"
-        android:layout_margin="@dimen/s"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/tv_h"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/xs"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Huellitas"
-            android:textAllCaps="true"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_t"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Team"
-            android:textSize="12sp"
-            android:textColor="?attr/colorOnPrimary" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

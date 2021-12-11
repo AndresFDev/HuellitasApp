@@ -163,15 +163,37 @@
                         android:max="100"
                         android:progress="10" />
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/b_editar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/xs"
+                        android:layout_marginTop="@dimen/s"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:backgroundTint="?attr/colorPrimaryDark"
+                        android:text="Editar Entrada"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:visibility="gone"
+                        app:strokeColor="?attr/colorOnPrimary"
+                        app:strokeWidth="0.5dp"
+                        app:shapeAppearance="@style/RoundedBottom"/>
+
                     <Button
                         android:id="@+id/b_save"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/s"
-                        android:background="@drawable/text_form"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:backgroundTint="?attr/colorPrimaryDark"
                         android:text="Actualizar Perfil"
                         android:textColor="?attr/colorOnPrimary"
-                        android:fontFamily="@font/montserrat_semibold"/>
+                        android:fontFamily="@font/montserrat_semibold"
+                        app:strokeColor="?attr/colorOnPrimary"
+                        app:strokeWidth="0.5dp"
+                        app:shapeAppearance="@style/RoundedPhoto"/>
 
                 </LinearLayout>
 

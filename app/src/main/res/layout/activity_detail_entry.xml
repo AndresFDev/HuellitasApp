@@ -118,7 +118,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_horizontal"
                 android:background="?attr/colorPrimaryVariant"
-                android:padding="@dimen/s"
+                android:padding="@dimen/xs"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -220,8 +220,8 @@
 
                         <ImageView
                             android:id="@+id/iv_gen"
-                            android:layout_width="@dimen/xxxl"
-                            android:layout_height="@dimen/xxxl"
+                            android:layout_width="@dimen/xxl"
+                            android:layout_height="@dimen/xxl"
                             android:src="@drawable/ic_male"
                             app:tint="?attr/colorBackgroundFloating" />
 
@@ -306,8 +306,8 @@
 
                         <ImageView
                             android:id="@+id/iv_raza"
-                            android:layout_width="@dimen/xxxl"
-                            android:layout_height="@dimen/xxxl"
+                            android:layout_width="@dimen/xxl"
+                            android:layout_height="@dimen/xl"
                             android:src="@drawable/ic_raza"
                             app:tint="?attr/colorBackgroundFloating" />
 
@@ -331,8 +331,8 @@
 
                         <ImageView
                             android:id="@+id/iv_city"
-                            android:layout_width="@dimen/xxxl"
-                            android:layout_height="@dimen/xxxl"
+                            android:layout_width="@dimen/xxl"
+                            android:layout_height="@dimen/xxl"
                             android:src="@drawable/ic_city"
                             app:tint="?attr/colorBackgroundFloating" />
 
@@ -416,8 +416,8 @@
 
                         <ImageView
                             android:id="@+id/iv_address"
-                            android:layout_width="@dimen/xxxl"
-                            android:layout_height="@dimen/xxxl"
+                            android:layout_width="@dimen/xxl"
+                            android:layout_height="@dimen/xxl"
                             android:src="@drawable/ic_adress"
                             app:tint="?attr/colorBackgroundFloating" />
 
@@ -440,8 +440,8 @@
 
                         <ImageView
                             android:id="@+id/iv_name"
-                            android:layout_width="@dimen/xxxl"
-                            android:layout_height="@dimen/xxxl"
+                            android:layout_width="@dimen/xxl"
+                            android:layout_height="@dimen/xxl"
                             android:src="@drawable/ic_contact"
                             app:tint="?attr/colorBackgroundFloating" />
 
@@ -526,8 +526,8 @@
 
                         <ImageView
                             android:id="@+id/iv_phone"
-                            android:layout_width="@dimen/xxxl"
-                            android:layout_height="@dimen/xxxl"
+                            android:layout_width="@dimen/xxl"
+                            android:layout_height="@dimen/xxl"
                             android:src="@drawable/ic_phone"
                             app:tint="?attr/colorBackgroundFloating" />
 

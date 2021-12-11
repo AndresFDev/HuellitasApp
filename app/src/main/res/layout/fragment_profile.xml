@@ -152,16 +152,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/xs"
-                android:backgroundTint="@color/bg_button"
+                android:backgroundTint="?attr/colorPrimaryDark"
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="Editar perfil"
                 android:textAllCaps="true"
                 android:textSize="16sp"
                 android:textColor="?attr/colorOnPrimary"
-                android:enabled="false"
+                android:enabled="true"
                 app:strokeColor="?attr/colorBackgroundFloating"
                 app:strokeWidth="0.5dp"
-                app:shapeAppearance="@style/RoundedBottom" />
+                app:shapeAppearance="@style/RoundedBottom"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
         </LinearLayout>
 
@@ -172,26 +173,34 @@
             android:layout_marginTop="@dimen/s"
             android:gravity="center_horizontal"
             android:text="Mis entradas"
-            android:textSize="24sp"
+            android:textSize="@dimen/f_l"
             android:textAllCaps="true"
             android:textColor="?attr/colorOnPrimary"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/montserrat_semibold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_head"
             app:layout_constraintVertical_bias="0.0"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_my_entries"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/s"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_my_entries"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_my_entries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/s"/>
+
+        </ScrollView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

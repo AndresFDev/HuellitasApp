@@ -132,6 +132,7 @@ public class ProfileFragment extends Fragment {
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        assert firebaseUser != null;
         DocumentReference documentReference= FirebaseFirestore.getInstance()
                 .collection(ConstantFB.USERS)
                 .document(firebaseUser.getUid());

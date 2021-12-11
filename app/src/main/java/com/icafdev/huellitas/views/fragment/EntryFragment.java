@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -70,7 +71,9 @@ public class EntryFragment extends Fragment {
     private RadioButton rb_search, rb_find, rb_adopt, rb_dog, rb_cat, rb_male, rb_female;
     private EditText et_adrees, et_pet_name, et_raza, et_description, et_name, et_phone;
     private Spinner s_cities;
-    private MaterialButton b_create_entry;
+    private MaterialButton b_create_entry, b_next_1, b_next_2, b_preview_1, b_preview_2;
+    private TextView tv_status, tv_type, tv_gen, tv_cities;
+    private ImageButton ib_back;
 
     private LinearLayout ll_photo;
     private static final int GALLERY_RESULT = 1;
@@ -83,6 +86,7 @@ public class EntryFragment extends Fragment {
 
         getUser();
 
+        tv_cities = view.findViewById(R.id.tv_cities);
         s_cities = view.findViewById(R.id.s_cities);
 
         ll_photo = view.findViewById(R.id.ll_photo);
@@ -109,10 +113,17 @@ public class EntryFragment extends Fragment {
         et_name = view.findViewById(R.id.et_name);
         et_phone = view.findViewById(R.id.et_phone);
 
+        b_next_1 = view.findViewById(R.id.b_next_1);
+        b_next_2 = view.findViewById(R.id.b_next_2);
+        b_preview_1 = view.findViewById(R.id.b_preview_1);
+        b_preview_2 = view.findViewById(R.id.b_preview_2);
         b_create_entry = view.findViewById(R.id.b_create_entry);
 
+        tv_status = view.findViewById(R.id.tv_status);
         rg_status = view.findViewById(R.id.rg_status);
+        tv_type = view.findViewById(R.id.tv_type);
         rg_type = view.findViewById(R.id.rg_type);
+        tv_gen = view.findViewById(R.id.tv_gen);
         rg_gen = view.findViewById(R.id.rg_gen);
 
         et_name.addTextChangedListener(textWatcher);
@@ -126,6 +137,88 @@ public class EntryFragment extends Fragment {
                 R.array.cities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s_cities.setAdapter(adapter);
+
+        b_next_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_status.setVisibility(View.GONE);
+                rg_status.setVisibility(View.GONE);
+                et_pet_name.setVisibility(View.GONE);
+                tv_type.setVisibility(View.GONE);
+                rg_type.setVisibility(View.GONE);
+                tv_gen.setVisibility(View.GONE);
+                rg_gen.setVisibility(View.GONE);
+                et_raza.setVisibility(View.GONE);
+                et_description.setVisibility(View.GONE);
+                b_next_1.setVisibility(View.GONE);
+
+                et_date.setVisibility(View.VISIBLE);
+                tv_cities.setVisibility(View.VISIBLE);
+                s_cities.setVisibility(View.VISIBLE);
+                et_adrees.setVisibility(View.VISIBLE);
+                b_preview_1.setVisibility(View.VISIBLE);
+                b_next_2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        b_preview_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_status.setVisibility(View.VISIBLE);
+                rg_status.setVisibility(View.VISIBLE);
+                et_pet_name.setVisibility(View.VISIBLE);
+                tv_type.setVisibility(View.VISIBLE);
+                rg_type.setVisibility(View.VISIBLE);
+                tv_gen.setVisibility(View.VISIBLE);
+                rg_gen.setVisibility(View.VISIBLE);
+                et_raza.setVisibility(View.VISIBLE);
+                et_description.setVisibility(View.VISIBLE);
+                b_next_1.setVisibility(View.VISIBLE);
+
+                et_date.setVisibility(View.GONE);
+                tv_cities.setVisibility(View.GONE);
+                s_cities.setVisibility(View.GONE);
+                et_adrees.setVisibility(View.GONE);
+                b_preview_1.setVisibility(View.GONE);
+                b_next_2.setVisibility(View.GONE);
+            }
+        });
+
+        b_next_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                et_date.setVisibility(View.GONE);
+                tv_cities.setVisibility(View.GONE);
+                s_cities.setVisibility(View.GONE);
+                et_adrees.setVisibility(View.GONE);
+                b_preview_1.setVisibility(View.GONE);
+                b_next_2.setVisibility(View.GONE);
+
+                ll_photo.setVisibility(View.VISIBLE);
+                et_name.setVisibility(View.VISIBLE);
+                et_phone.setVisibility(View.VISIBLE);
+                b_preview_2.setVisibility(View.VISIBLE);
+                b_create_entry.setVisibility(View.VISIBLE);
+            }
+        });
+
+        b_preview_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                et_date.setVisibility(View.VISIBLE);
+                tv_cities.setVisibility(View.VISIBLE);
+                s_cities.setVisibility(View.VISIBLE);
+                et_adrees.setVisibility(View.VISIBLE);
+                b_preview_1.setVisibility(View.VISIBLE);
+                b_next_2.setVisibility(View.VISIBLE);
+
+                ll_photo.setVisibility(View.GONE);
+                et_name.setVisibility(View.GONE);
+                et_phone.setVisibility(View.GONE);
+                b_preview_2.setVisibility(View.GONE);
+                b_create_entry.setVisibility(View.GONE);
+            }
+        });
 
         rg_status.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
